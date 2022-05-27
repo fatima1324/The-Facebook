@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>View Post</title>
+        <link rel="stylesheet" href="../Style.css">
+    </head>
+    <body>
+       
+            <div class="Header">
+          <h2 class="floatright">Wellcom To Facebook</h2>
+            </div>
+
+       <div class="data">
+          <% if(post) {  %>
+               <div class="col3">
+                  <h2><%= post.Name %></h2>
+                  <p><%= post.Message %></p>
+                </div>
+                <div class="col1">
+                 <div class="txtdown">
+                  <p><%= post.created_at.toDateString() %></p>
+               
+                 </div>
+                </div>
+                <% } %>
+        </div>
+         <div >
+         <form  class="rightform" action="/feed/edit-p?post_id=<%= post._id %>" method="POST">
+                <button>Edit Post</button>
+               </form>
+            
+              <form onsubmit="return confirm('Are you sure?');" class="rightform" 
+              action="/feed/delete_post?post_id=<%= post._id %>" method="POST">
+                <button>Delete article</button>
+               </form>
+         
+            </div>
+    </body>
+</html>

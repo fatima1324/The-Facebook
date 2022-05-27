@@ -1,0 +1,50 @@
+body {
+    max-width: 900px;
+    margin: 0 auto;
+}
+.err {
+    color: red;
+}
+.Header {
+    width: 100%;
+}
+.Header h2 {
+    display: inline-block;
+ }
+.floatright {
+    float:right;
+}
+.data {
+display:flex;
+width:100%;
+justify-content:space-between;
+}
+.col1{
+    width:24%;
+    
+}
+.col3 {
+    width: 74%;
+}
+.txtdown {
+    margin-top:25%;
+}
+form {
+    margin: 4px 0;
+}
+form input {
+    min-width: 140px;
+    height: 30px;
+}
+form button {
+    display: block;
+    margin: 3px;
+    padding: 5px 7px;
+    background-color: green;
+    color: #fff;
+    cursor:pointer;
+}
+.msg {
+    width: 90%;
+    height: 80px;
+}

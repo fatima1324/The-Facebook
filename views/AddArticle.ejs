@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Add Articles</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+
+       <h1> New Article </h1>
+            </hr>
+          
+        <% if(formError) { %>
+            <h5 class="err"> <%= formError %> </h5>
+        <% } %>
+        
+        <form action="/" method="POST">
+           <h2>Title : </h2>
+             <textarea name="title" /></textarea>
+            <h2>Article : </h2>
+             <textarea name="article" /></textarea>
+            <button>Add article</button>
+        </form>
+        
+    </body>
+</html>

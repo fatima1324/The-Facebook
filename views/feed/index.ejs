@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Facebook Posts</title>
+        <link rel="stylesheet" href="Style.css">
+    </head>
+    <body>
+       <div class="Header">
+          <h2>Add a post</h2>  <h2 class="floatright">Wellcom To Facebook</h2>
+            </div>
+
+            <% if(formError) { %>
+            <h5 class="err"> <%= formError %> </h5>
+        <% } %>
+        
+        <form action="/feed" method="POST">
+           <h2>Name : </h2>
+             <input type="text" placeholder="Name" name="Name" required  />
+            <h2>Message : </h2>
+             <input class="msg" type="text" placeholder="Message" name="Message" required />
+            <button>Add Post</button>
+        </form>
+
+        
+          <% if(allposts.length > 0) { 
+                allposts.forEach( post => { %>
+             <div class="data">
+                <div class="col3">
+                  <h2><%= post.Name %></h2>
+                  <p><%= post.Message %></p>
+                </div>
+                <div class="col1">
+                 <div class="txtdown">
+                 <a href="/feed/view?post_id=<%= post._id %>" >See more </a>
+                  <p><%= post.created_at.toLocaleDateString() %></p>
+                 </div>
+                </div>  
+             </div>
+                <% }) %>
+                 
+            <% } else { %>
+                <h3 class="err"> No Posts found </h3>
+                <p>You can add new post to see the results</p>
+            <% } %>
+         
+        
+    </body>
+</html>

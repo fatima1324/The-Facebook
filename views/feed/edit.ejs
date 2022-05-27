@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Edit Post</title>
+        <link rel="stylesheet" href="../Style.css">
+    </head>
+    <body>
+       
+         <div class="Header">
+          <h2>Edit a post</h2>
+            </div>
+
+            <% if(formError) { %>
+            <h5 class="err"> <%= formError %> </h5>
+        <% } %>
+        
+        <form action="/feed/confirm-edit?post_id=<%= post._id %>" method="POST">
+           <h2>Name : </h2>
+             <input type="text" placeholder="Name" name="Name" value="<%= post.Name %>" required  />
+            <h2>Message : </h2>
+             <input class="msg" type="text" placeholder="Message" name="Message" value="<%= post.Message %>" required />
+            <button>Submit</button>
+        </form>
+       
+        
+    </body>
+</html>
